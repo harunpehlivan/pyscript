@@ -151,8 +151,7 @@ class Element:
         if from_content:
             el = el.content
 
-        _el = el.querySelector(query)
-        if _el:
+        if _el := el.querySelector(query):
             return Element(_el.id, _el)
         else:
             console.log(f"WARNING: can't find element matching query {query}")
